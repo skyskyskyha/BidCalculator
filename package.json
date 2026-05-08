@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "node scripts/dev-server.mjs",
     "build": "vite build --outDir app-dist --emptyOutDir false --base ./",
+    "build:pages": "vite build --outDir dist --emptyOutDir false --base /BidCalculator/",
     "preview": "vite preview --host 0.0.0.0",
     "desktop:dev": "concurrently \"npm run dev\" \"wait-on http://localhost:5174 && electron .\"",
     "dist:desktop": "npm run build && electron-builder",
