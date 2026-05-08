@@ -52,6 +52,12 @@ src/averageRemainderCandidates.js
 
 ## 网页版怎么用
 
+在线访问：
+
+```text
+https://skyskyskyha.github.io/BidCalculator/
+```
+
 安装依赖：
 
 ```powershell
