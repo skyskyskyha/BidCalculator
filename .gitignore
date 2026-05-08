@@ -1,0 +1,10 @@
+node_modules/
+app-dist/
+dist/
+dist-check/
+build-check*/
+release/
+release-fixed/
+release-latest/
+*.log
+.DS_Store

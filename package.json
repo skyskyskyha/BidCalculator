@@ -1,0 +1,50 @@
+{
+  "name": "bid-calculator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "node scripts/dev-server.mjs",
+    "build": "vite build --outDir app-dist --emptyOutDir false --base ./",
+    "preview": "vite preview --host 0.0.0.0",
+    "desktop:dev": "concurrently \"npm run dev\" \"wait-on http://localhost:5174 && electron .\"",
+    "dist:desktop": "npm run build && electron-builder",
+    "pack:desktop": "npm run build && electron-builder --dir"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "lucide-react": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "vite": "latest"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "electron": "^42.0.0",
+    "electron-builder": "^26.8.1",
+    "wait-on": "^9.0.5"
+  },
+  "build": {
+    "appId": "com.bidcalculator.app",
+    "productName": "竞拍之王计算器",
+    "directories": {
+      "output": "release-latest"
+    },
+    "files": [
+      "app-dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "dir",
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
